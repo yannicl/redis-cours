@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="section04" />
+        <module name="section03" />
         <module name="section02" />
         <module name="section01" />
       </profile>
@@ -14,11 +16,15 @@
       <module name="redis-cours" target="1.7" />
       <module name="section01" target="1.7" />
       <module name="section02" target="1.11" />
+      <module name="section03" target="1.11" />
+      <module name="section04" target="1.11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="section02" options="-parameters" />
+      <module name="section03" options="-parameters" />
+      <module name="section04" options="-parameters" />
     </option>
   </component>
 </project>
