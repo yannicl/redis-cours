@@ -1,10 +1,7 @@
 package com.yannicl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -33,6 +30,20 @@ public class UserController {
         userPreferences.setLanguage("fr");
         userPreferencesRepository.save(userPreferences);
         return userPreferences;
+    }
+
+    @PostMapping("api/user/language")
+    public UserPreferences updateLanguage(@RequestParam(value = "userId") String userId, @RequestParam(value = "language") String language) {
+        UserPreferences userPreferences = userPreferencesRepository.findById(userId).get();
+        userPreferences.setLanguage(language);
+        userPreferencesRepository.save(userPreferences);
+        return userPreferences;
+    }
+
+    @DeleteMapping("api/user")
+    public UserPreferences deleteUser(@RequestParam(value = "userId") String userId) {
+        userPreferencesRepository.deleteById(userId);
+        return null;
     }
 
 

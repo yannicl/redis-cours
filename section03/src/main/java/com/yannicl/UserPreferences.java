@@ -1,11 +1,12 @@
 package com.yannicl;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.TimeToLive;
 import org.springframework.data.redis.core.index.Indexed;
 
-@RedisHash("user-prefs")
+@RedisHash(value = "user-prefs", timeToLive = 30L)
 public class UserPreferences {
 
     @Id
@@ -14,8 +15,9 @@ public class UserPreferences {
     private String accountId;
     private String language;
     private String consentCookies;
+
     @TimeToLive
-    Long timeout = 30L;
+    private Long timeout;
 
     public String getUserId() {
         return userId;
@@ -47,5 +49,14 @@ public class UserPreferences {
 
     public void setConsentCookies(String consentCookies) {
         this.consentCookies = consentCookies;
+    }
+
+    @JsonProperty
+    public Long getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(Long timeout) {
+        this.timeout = timeout;
     }
 }
