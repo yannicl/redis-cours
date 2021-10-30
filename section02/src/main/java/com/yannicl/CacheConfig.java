@@ -18,7 +18,7 @@ public class CacheConfig {
 
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
-        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration("192.168.0.157", 6379);
+        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration("redis.local", 6379);
         return new JedisConnectionFactory(redisStandaloneConfiguration);
     }
 
