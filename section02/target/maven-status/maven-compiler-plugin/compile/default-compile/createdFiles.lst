@@ -1,0 +1,5 @@
+com/yannicl/ServeurWebApplication.class
+com/yannicl/MeteoController.class
+com/yannicl/MeteoService.class
+com/yannicl/ObservationsRessource.class
+com/yannicl/CacheConfig.class

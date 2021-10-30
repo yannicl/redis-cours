@@ -1,0 +1,11 @@
+com/yannicl/ProductController.class
+com/yannicl/CacheCleanerService.class
+com/yannicl/LockConfig.class
+com/yannicl/LeaderConfiguration.class
+com/yannicl/Product.class
+com/yannicl/ProductService.class
+com/yannicl/CacheConfig.class
+com/yannicl/ServeurWebApplication.class
+com/yannicl/LeaderService.class
+com/yannicl/ProductClient.class
+com/yannicl/RedisConfig.class
